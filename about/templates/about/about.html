@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Sobre mi {% endblock %}
+
+{% block image-header %} about {% endblock %}
+
+{% block title-header %} 
+<div>
+    <h1 class="display-4 fw-bold">Manuel Alonso</h1>
+</div>
+<div>
+    <h3 class="fs-2">Desarrollador Web</h3>
+</div>
+{% endblock %}
+
+{% block content %} 
+
+{% load static %}
+
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+    </div>
+    <div class="col-6">
+        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
+    </div>
+</div> 
+
+<div class="row d-flex pt-5">
+    <div class="col-12">
+        <h2 class="fw-bold">Formación Académica</h2>
+        {% for course in courses %}
+
+        <h3>{{ course.title }}</h3>
+        <p><strong>Título obtenido:</strong> {{ course.degree_title }}</p>
+        <p><strong>Descripción:</strong> {{ course.description }} </p>
+
+        <hr>
+        {% endfor %}
+
+        <br>
+
+        <h2 class="fw-bold">Conocimientos</h2>
+        <section class="skills" id="skills">
+            <div class="skills__container" id="skills">
+
+                {% for skill in skills %}
+                <div class="card__skills">
+                    <div class="skill__thumbnail">
+                        <img class="skill__logo" src={{ skill.image.url }} alt="html5">
+                    </div>
+
+                    <div class="skill__texto">
+                        <p class="skill__titulo">{{ skill.title }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </section>
+    </section>
+    </div>
+</div>
+
+{% endblock %}
+
