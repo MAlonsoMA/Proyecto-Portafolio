@@ -17,46 +17,27 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href='/admin/'><span class="display-6">Manuel Alonso</span></a>
+            <a class="navbar-brand" href='/admin/'><span>Manuel Alonso Martí</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mt-3 ms-4">
+                <div class="navbar-nav mt-0 ms-5">
                     <a class="nav-link {% if request.path == "/" %}active fw-bold{%endif%}" aria-current="page" href={% url 'home' %}>Inicio</a>
                     <a class="nav-link {% if request.path == "/about/" %}active fw-bold{%endif%}" href={% url 'about' %}>Sobre mi</a>
-                    <a class="nav-link {% if request.path == "/portfolio/" or "project" in request.path %}active fw-bold{%endif%}" href={% url 'portfolio' %}>Portafolio</a>
+                    <a class="nav-link {% if request.path == "/portfolio/" or "project" in request.path or "search" in request.path %}active fw-bold{%endif%}" href={% url 'portfolio' %}>Portafolio</a>
                     <a class="nav-link {% if request.path == "/contact/" %}active fw-bold{%endif%}" href={% url 'contact' %}>Contacto</a>
                 </div>
             </div>
-            {%if request.path == "/portfolio/" %}
-            <!--BARRA DE BUSQUEDA-->   
-               <form class="ms-2" action="{% url 'search' %}" method="GET">
-                    <input type="text" class="form-control2" placeholder="Buscar..." name="search" value = "{{ request.GET.search }}">
-                    <button type="submit" class="btn btn-sm btn-success">Buscar</button>
-                    <i class="bi bi-search"></i>
-                </form>
-            {%endif%}
         </div>
     </nav>
 
-    <!-- CABECERA -->
-    <div class="{% block image-header %} {% endblock %} imagen-fondo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 titulos">
-                    {% block title-header %} {% endblock %}
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- CONTENIDO -->
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
-        <div class="container">
-            {% block content %} {% endblock %}
-        </div>
+    
+    <div class="container mt-4">
+        {% block content %} {% endblock %}
     </div>
+    
 
     <!-- FOOTER -->
     <footer class="footer">

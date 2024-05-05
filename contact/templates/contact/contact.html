@@ -17,18 +17,18 @@
 
 {% block content %}
     <h3 class="text-center">Formulario de Contacto</h3>
-    <p class="fs-5 text-center px-5">Es un placer que puedas contactarnos. Nos pondremos en contacto contigo, en el menor tiempo posible</p>
+    <p class="fs-5 text-center px-5 mt-3 mb-3">Nos pondremos en contacto contigo, en el menor tiempo posible</p>
     <div class="row">
         <div class="col-md-6">
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nombre y Apellido</label>
+                    <label for="name" class="form-label">Nombre y apellidos</label>
                     {{ form.name }}
                     {{ form.name.errors }}
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <label for="email" class="form-label">Correo electrónico</label>
                     {{ form.email }}
                     {{ form.email.errors }}
                 </div>
@@ -37,11 +37,11 @@
                     {{ form.message }}
                     {{ form.message.errors }}
                 </div>
-                <input class="btn btn-primary" type="submit" value="Enviar Mensaje" {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
+                <input class="btn btn-primary mb-5" type="submit" value="Enviar Mensaje" {% if 'ok' in request.GET %}disabled{% endif %}{% if 'error' in request.GET %}disabled{% endif %}>
             </form>
 
             {% if 'ok' in request.GET %}
-                <div class="alert alert-success mt-5" role="alert">
+                <div class="alert alert-success" role="alert">
                     <strong>El mensaje se ha enviado correctamente</strong>
                 </div>
             {% endif %}
@@ -51,10 +51,29 @@
                     <strong>El mensaje no ha podido ser enviado. Por favor, intente más tarde</strong>
                 </div>
             {% endif %}
+
         </div>
-        
-        <div class="col-md-6 mb-5">
-            <img class="float-start img-fluid" src={% static 'contact/img/email.jpg' %} alt="">
+        <div class="col-md-6">
+            <h6 class="mb-3">Puntos de contacto presenciales</h6>
+            <ol class="list-group ">
+                {% for location in locations %}
+                <li class="list-group-item d-flex justify-content-between align-items-start mb-1">
+                    <div class="ms-2 me-auto">
+                    <div class="fw-bold">{{ location.name }}</div>
+                    {{ location.address }}
+                    </div>
+                </li>
+                {% endfor %}
+                <span class="mb-3"></span>
+            </ol>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            {{ map|safe }}
+            <!-- <img class="float-start img-fluid" src={% static 'contact/img/email.jpg' %} alt=""> -->
+        </div>
+        <div class="col-md-2">
         </div>
     </div>
  

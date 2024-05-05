@@ -123,3 +123,53 @@
     font-size: 16px;
     color: #033F62;
 }
+/* CAPITULARES - GENERICAS Y PARA FIREFOX */
+span p:first-of-type::first-letter{
+    font-size: 3em;
+    line-height: 0.9;
+    color: #0507a2;
+    font-family: Times;
+    float:left;
+    padding-top: 3px;
+    padding-right: 6px;
+}
+
+@-moz-document url-prefix(){
+    span p:first-of-type::first-letter{
+        font-size: 3em;
+        line-height: 3;
+        color: #0507a2;
+        font-family: Times;
+        float:left;
+        padding-top: 9px;
+        padding-right: 6px;       
+    }
+}
+/* Hacer un poco más grande el texto de la descripción y detalle del proyecto */
+span p:first-of-type{
+    font-size: 1.1em;
+}
+/* cambiar el color del código */
+code{
+    color: #0507a2 !important
+}
+/* conmfigurar barra búsqueda en 1 línea */
+.form-control2{
+    display:inline !important;
+    max-width:80% !important;
+    padding: .375rem .5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

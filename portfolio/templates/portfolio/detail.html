@@ -1,0 +1,41 @@
+{% extends 'core/base2.html' %}
+
+{% block title %} Portafolio Detail {% endblock %}
+
+{% block content %} 
+
+{% load static %}
+
+<!-- Proyecto -->
+<div class="row mb-5">  	
+    
+  <div class="col-md-4">
+    <h1 class="section-heading title">{{ detail.title }}</h1>
+    <hr>
+    <span class="fst-italic"><p>{{ detail.description }}</p></span>
+    <hr>
+  </div> 
+  <div class="col-md-8">
+    <img class="img-fluid mb-1 border border-2 shadow p-2" src="{{ detail.image.url }}" alt="...">
+    <p class="text-start mb-4 fst-italic">{%if detail.pie%}{{detail.pie}}{%endif%} {%if detail.autor%}| {{detail.autor|upper}}{%endif%}</p>
+  </div>
+     
+  <div class="col-md-2">     
+  </div>
+  <div class="col-md-10"> 
+    <span>{{ detail.detalle|safe}}</span>
+  </div>
+  
+  <div class="col-md-2">     
+  </div>
+  <div class="col-md-10">
+    <a class="btn btn-sm btn-success mt-3" href="{% url 'portfolio' %}">Volver...</a>
+    {% if detail.link %}      
+        <a class="btn btn-sm btn-info mt-3" href="{{ project.link }}">Ir al sitio web</a>
+    {% else %}
+        <a class="btn btn-sm btn-warning mt-3">En desarrollo...</a>
+    {% endif %}     
+  </div>
+</div>
+
+{% endblock %}

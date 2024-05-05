@@ -1,0 +1,53 @@
+{% extends 'core/base2.html' %}
+
+{% block title %} Portafolio Búsqueda {% endblock %}
+
+{%load static%}
+
+{%block content%}
+
+<div class="alert alert-success" role="alert">
+    Búsqueda: <strong>"{{queryset}}": {{ projects|length }} resultado(s)</strong>
+</div>
+{% if queryset and projects %}
+    
+    {% for project in projects %}
+
+    <!-- Proyecto -->
+    <div class="row project mb-5">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid mt-5 border border-2 shadow p-2" src="{{ project.image.url }}" alt="">
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">{{ project.title }}</h2>   
+            <!-- <p>{{ project.description }}</p> -->
+            <p><strong>{{project.created | date:"d/m/Y. h:m"}}</strong> | {{ project.description }}</p>
+            
+            <a class="btn btn-sm btn-success" href={% url 'detail_project' project.id %}>Ver detalle</a> 
+            {% if project.link %}      
+                <a class="btn btn-sm btn-info" href="{{ project.link }}">Ir al sitio web</a>
+            {% else %}
+                <a class="btn btn-sm btn-warning">En desarrollo...</a>
+                
+            {% endif %}     
+        </div>
+    </div>
+
+    {% endfor %}
+
+{% else %}
+    <div class="my-3 alert alert-danger" role="danger">
+        <strong>No hay resultados para su búsqueda</strong>
+    </div>
+
+{% endif %}
+
+<hr>
+
+
+<div class="my-3">
+    <a class="btn btn-success rounded-pill" href="{% url 'portfolio' %}">Volver al portafolio</a>
+</div>
+
+
+{%endblock%}

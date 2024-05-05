@@ -24,6 +24,11 @@ urlpatterns = [
     path('about/', about_views.about, name='about'),
     path('portfolio/', portfolio_views.portfolio, name='portfolio'),
     path('contact/', include('contact.urls')),
+    #DETALLE DEL proyecto
+    path('project/<int:project_id>',portfolio_views.detail_project, name='detail_project'),
+    #filtrado por busqueda
+    path('search/', portfolio_views.search, name='search'),
+
     path('admin/', admin.site.urls),
 ]
 
