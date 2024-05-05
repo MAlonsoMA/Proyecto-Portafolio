@@ -29,7 +29,7 @@
             
             <a class="btn btn-sm btn-success" href={% url 'detail_project' project.id %}>Ver detalle</a> 
             {% if project.link %}      
-                <a class="btn btn-sm btn-info" href="{{ project.link }}">Ir al sitio</a>
+                <a class="btn btn-sm btn-info" href="{{ project.link }}" target='_blank'>Ir al sitio</a>
             {% else %}
                 <a class="btn btn-sm btn-warning">En desarrollo...</a>    
             {% endif %}    

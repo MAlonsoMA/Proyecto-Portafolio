@@ -31,7 +31,7 @@
   <div class="col-md-10">
     <a class="btn btn-sm btn-success mt-3" href="{% url 'portfolio' %}">Volver...</a>
     {% if detail.link %}      
-        <a class="btn btn-sm btn-info mt-3" href="{{ project.link }}">Ir al sitio</a>
+        <a class="btn btn-sm btn-info mt-3" href="{{ detail.link }}" target='_blank'>Ir al sitio</a>
     {% else %}
         <a class="btn btn-sm btn-warning mt-3">En desarrollo...</a>
     {% endif %}     
