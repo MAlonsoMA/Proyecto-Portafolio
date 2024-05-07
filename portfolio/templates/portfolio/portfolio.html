@@ -29,7 +29,8 @@
             
             <a class="btn btn-sm btn-success" href={% url 'detail_project' project.id %}>Ver detalle</a> 
             {% if project.link %}      
-                <a class="btn btn-sm btn-info" href="{{ project.link }}" target='_blank'>Ir al sitio</a>
+                <a class="btn btn-sm btn-primary" href="{{ project.link }}" target='_blank'>Ir a Github</a>
+                <a class="btn btn-sm btn-primary" href="https://mvalonsom.pythonanywhere.com" target='_blank'>Ir a Internet</a>
             {% else %}
                 <a class="btn btn-sm btn-warning">En desarrollo...</a>    
             {% endif %}    
