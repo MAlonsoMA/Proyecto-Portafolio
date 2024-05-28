@@ -1,0 +1,11 @@
+from django.apps import AppConfig
+
+
+class BackgroundsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'backgrounds'
+
+    verbose_name = 'Imágenes de fondo'
+
+    def ready(self):
+        import backgrounds.signals

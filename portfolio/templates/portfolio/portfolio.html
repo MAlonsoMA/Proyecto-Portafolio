@@ -9,7 +9,7 @@
     <h1 class="display-4 fw-bold">Portafolio</h1>
 </div>
 <div>
-    <h3 class="fs-2">Desarrollos Realizados</h3>
+    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Proyectos Realizados</h3>
 </div>
 
 {% endblock %}
@@ -25,12 +25,12 @@
         </div>
         <div class="col-lg-7 col-md-8">
             <h2 class="section-heading title">{{ project.title }}</h2>   
-            <p><strong>{{project.created | date:"d/m/Y. h:m"}}</strong> | {{ project.description }}</p>
+            <p><strong>{{project.created | date:"d/m/Y. H:i"}}</strong> | {{ project.description }}</p>
             
             <a class="btn btn-sm btn-success" href={% url 'detail_project' project.id %}>Ver detalle</a> 
             {% if project.link %}      
                 <a class="btn btn-sm btn-primary" href="{{ project.link }}" target='_blank'>Ir a Github</a>
-                <a class="btn btn-sm btn-primary" href="https://mvalonsom.pythonanywhere.com" target='_blank'>Ir a Internet</a>
+                <a class="btn btn-sm btn-primary" href="{{ project.link_i }}" target='_blank'>Ir a Internet</a>
             {% else %}
                 <a class="btn btn-sm btn-warning">En desarrollo...</a>    
             {% endif %}    

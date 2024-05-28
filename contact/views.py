@@ -24,7 +24,7 @@ def contact(request):
                 'Proyecto Porfolio',
                 'Mensaje enviado por {} <{}>:\n\n{}'.format(name,email,message),
                 email,
-                ['manuelalonsomarti@gmail.com'],
+                ['manuelalonsoweb@gmail.com'],
                 reply_to=[email],
             )
             

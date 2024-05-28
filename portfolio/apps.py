@@ -6,3 +6,6 @@ class PortfolioConfig(AppConfig):
     name = 'portfolio'
     # Configuración extendida para cambiar el nombre de la aplicación en el sector admin
     verbose_name = 'Portafolio'         
+
+    def ready(self):
+        import portfolio.signals

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'about.apps.AboutConfig',
     'contact',
+    'backgrounds',
     'redsocial.apps.RedsocialConfig',
     'ckeditor',
 ]

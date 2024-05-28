@@ -1,20 +1,22 @@
 
-/* IMAGENES DE FONDO DE LAS PAGINAS */
+/* IMAGENES DE FONDO DE LAS PAGINAS
+la ruta antigua era: background-image: url(../img/about-bg.jpeg);
+y estaban en static/core/img */
 
 .home {
-    background-image: url(../img/inicio-bg.jpeg);
+    background-image: url(../../../media/backgrounds/inicio-bg.jpg);
 }
 
 .about {
-    background-image: url(../img/about-bg2.jpeg);
+    background-image: url(../../../media/backgrounds/about-marron-bg.jpg);
 }
 
 .portfolio {
-    background-image: url(../img/portfolio-bg.jpeg);
+    background-image: url(../../../media/backgrounds/portfolio-bg.jpg);
 }
 
 .contact {
-    background-image: url(../img/contact-bg.png);
+    background-image: url(../../../media/backgrounds/contact-bg.jpg);
 }
 
 .imagen-fondo {
@@ -36,6 +38,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 60vh;
+    text-shadow: 3px 6px 4px #888;
 }
 
 /* FOOTER */

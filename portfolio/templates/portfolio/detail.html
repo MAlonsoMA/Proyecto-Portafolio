@@ -9,7 +9,7 @@
 <!-- Proyecto -->
 <div class="row mb-5">  	
     
-  <div class="col-md-4">
+  <div class="col-lg-4"> <!--ante estaba col-md-4-->
     <h1 class="section-heading title">{{ detail.title }}</h1>
     <hr>
     <span class="fst-italic"><p>{{ detail.description }}</p></span>
@@ -29,7 +29,8 @@
   <div class="col-md-2">     
   </div>
   <div class="col-md-10">
-    <a class="btn btn-sm btn-success mt-3" href="{% url 'portfolio' %}">Volver...</a>
+    <a class="btn btn-sm btn-info mt-3" href="#">Ir arriba...</a>
+    <a class="btn btn-sm btn-success mt-3" href="{% url 'portfolio' %}">Portafolio...</a>
     {% if detail.link %}      
         <a class="btn btn-sm btn-primary mt-3" href="{{ detail.link }}" target='_blank'>Ir a Github</a>
         <a class="btn btn-sm btn-primary mt-3" href="https://mvalonsom.pythonanywhere.com" target='_blank'>Ir a Internet</a>

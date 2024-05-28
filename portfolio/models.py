@@ -23,7 +23,8 @@ class Project(models.Model):
     image = models.ImageField(default='default.jpg',upload_to=profile_picture_path, verbose_name='Imagen')
     pie = models.CharField(max_length=100, blank=True, null=True, verbose_name='pie')
     autor = models.CharField(max_length=100, blank=True, null=True, verbose_name='autor')
-    link = models.URLField(max_length=180, blank=True, null=True, verbose_name='Enlace')
+    link = models.URLField(max_length=180, blank=True, null=True, verbose_name='Enlace Github')
+    link_i = models.URLField(max_length=180, blank=True, null=True, verbose_name='Enlace Web')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha Creación')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha Modificación')
 

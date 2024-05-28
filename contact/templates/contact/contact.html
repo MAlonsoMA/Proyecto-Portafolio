@@ -11,15 +11,15 @@
     <h1 class="display-4 fw-bold">Contacto</h1>
 </div>
 <div>
-    <h3 class="fs-2">Asesoría personal</h3>
+    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Asesoría personal</h3>
 </div>
 {% endblock %}
 
 {% block content %}
     <h3 class="text-center">Formulario de Contacto</h3>
     <p class="fs-5 text-center px-5 mt-3 mb-3">Nos pondremos en contacto contigo, en el menor tiempo posible</p>
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row gx-5">
+        <div class="col-md-6 ">
             <form action="" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
@@ -71,7 +71,6 @@
         </div>
         <div class="col-md-8">
             {{ map|safe }}
-            <!-- <img class="float-start img-fluid" src={% static 'contact/img/email.jpg' %} alt=""> -->
         </div>
         <div class="col-md-2">
         </div>

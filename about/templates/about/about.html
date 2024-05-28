@@ -9,7 +9,7 @@
     <h1 class="display-4 fw-bold">Manuel Alonso</h1>
 </div>
 <div>
-    <h3 class="fs-2">Desarrollador Web</h3>
+    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Desarrollador Web</h3>
 </div>
 {% endblock %}
 
@@ -18,10 +18,11 @@
 {% load static %}
 
 <div class="row d-flex">
-    <div class="col-4 offset-md-auto">
-        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %} alt="">
+    <div class="col-5 offset-md-auto">
+        <!-- <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.jpg' %} alt=""> -->
+        <img class="img-fluid img-thumbnail img-circle img-perfil" src={{BASE_DIR}}"/media/backgrounds/foto-perfil.jpg" alt="Foto de perfil">
     </div>
-    <div class="col-6">
+    <div class="col-7">
         <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
     </div>
 </div> 
@@ -43,13 +44,11 @@
         <h2 class="fw-bold">Conocimientos</h2>
         <section class="skills" id="skills">
             <div class="skills__container" id="skills">
-
                 {% for skill in skills %}
                 <div class="card__skills">
                     <div class="skill__thumbnail">
                         <img class="skill__logo" src={{ skill.image.url }} alt="html5">
                     </div>
-
                     <div class="skill__texto">
                         <p class="skill__titulo">{{ skill.title }}</p>
                     </div>
