@@ -184,7 +184,7 @@ CKEDITOR_CONFIGS = {
 }
 
 
-
+# Archivos subidos desde la aplicación
 import os
 
 MEDIA_URL = '/media/'
