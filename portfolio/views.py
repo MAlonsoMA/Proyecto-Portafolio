@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.db.models import Q
 from .models import Project
+from backgrounds.models import BackgroundImage
 
 # Create your views here.
 def portfolio(request):
     projects = Project.objects.all()
-    return render(request, 'portfolio/portfolio.html', {'projects':projects})
+    backgrounds=BackgroundImage.objects.all()
+    return render(request, 'portfolio/portfolio.html', {'projects':projects, 'backgrounds':backgrounds})
 
 # Detalle del project
 def detail_project(request, project_id):

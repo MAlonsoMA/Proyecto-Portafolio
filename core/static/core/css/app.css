@@ -4,19 +4,19 @@ la ruta antigua era: background-image: url(../img/about-bg.jpeg);
 y estaban en static/core/img */
 
 .home {
-    background-image: url(../../../media/backgrounds/inicio-bg.jpg);
+    background-image: url(../../../media/backgrounds/home.jpg);
 }
 
 .about {
-    background-image: url(../../../media/backgrounds/about-marron-bg.jpg);
+    background-image: url(../../../media/backgrounds/about.jpg);
 }
 
 .portfolio {
-    background-image: url(../../../media/backgrounds/portfolio-bg.jpg);
+    background-image: url(../../../media/backgrounds/portfolio.jpg);
 }
 
 .contact {
-    background-image: url(../../../media/backgrounds/contact-bg.jpg);
+    background-image: url(../../../media/backgrounds/contact.jpg);
 }
 
 .imagen-fondo {

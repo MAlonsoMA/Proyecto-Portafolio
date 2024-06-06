@@ -5,12 +5,16 @@
 {% block image-header %} portfolio {% endblock %}
 
 {% block title-header %} 
-<div>
-    <h1 class="display-4 fw-bold">Portafolio</h1>
-</div>
-<div>
-    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Proyectos Realizados</h3>
-</div>
+{% for background in backgrounds %}
+    {% if background.name == "portfolio" %}
+        <div>          
+            <h1 class="display-4 fw-bold">{{background.title}}</h1>
+        </div>
+        <div>
+            <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">{{background.subtitle}}</h3>
+        </div>
+    {% endif %}
+{% endfor %}
 
 {% endblock %}
 

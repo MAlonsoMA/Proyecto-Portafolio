@@ -5,14 +5,24 @@
 {% block image-header %} home {% endblock %}
 
 {% block title-header %} 
-<div>
-    <h1 class="display-4 fw-bold">Desarrollo Web</h1>
-</div>
-<div>
-    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">con Django</h3>
-</div>
+{% for background in backgrounds %}
+    {% if background.name == "home" %}
+        <div>          
+            <h1 class="display-4 fw-bold">{{background.title}}</h1>
+        </div>
+        <div>
+            <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">{{background.subtitle}}</h3>
+        </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}
 
 {% block content %} 
-<h2 class="fw-lighter fst-italic px-5">"La única persona invencible es la que nunca se rinde. Permitirse volver a empezar con la inocencia de un niño es concederse una nueva oportunidad para el resto de la vida."</h2>
+
+{% for background in backgrounds %}
+    {% if background.name == "home" %}
+    <h2 class="fw-lighter fst-italic px-5">{{background.sentence}}</h2>
+    {% endif %}
+{% endfor %}
+
 {% endblock %}

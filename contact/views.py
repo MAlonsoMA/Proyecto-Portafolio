@@ -5,6 +5,7 @@ from django.core.mail import EmailMessage
 from .models import Location
 import folium
 from folium.plugins import FastMarkerCluster
+from backgrounds.models import BackgroundImage
 
 def contact(request):
     # print('Tipo de petición: {}'.format(request.method))
@@ -43,10 +44,13 @@ def contact(request):
     # Defino el mapa
     initialMap = folium.Map(location=[39.4873809,-0.9086], zoom_start=9, maxheight=1000)
 
-     # Creamos el Clustering de los marcadores
+    # Creamos el Clustering de los marcadores
     latitudes = [location.lat for location in locations]
     longitudes = [location.lng for location in locations]
     popups = [location.name for location in locations]
-    FastMarkerCluster(data=list(zip(latitudes, longitudes, popups))).add_to(initialMap) 
+    FastMarkerCluster(data=list(zip(latitudes, longitudes, popups))).add_to(initialMap)
 
-    return render(request, 'contact/contact.html', {'form':contact_form,'map':initialMap._repr_html_(), 'locations':locations})
+    #incorporacion textos imagen fondo
+    backgrounds=BackgroundImage.objects.all()
+
+    return render(request, 'contact/contact.html', {'form':contact_form,'map':initialMap._repr_html_(), 'locations':locations, 'backgrounds':backgrounds})

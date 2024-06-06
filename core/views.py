@@ -1,8 +1,7 @@
 from django.shortcuts import render
+from backgrounds.models import BackgroundImage
 
 # Create your views here.
 def home(request):
-    return render(request, 'core/home.html')
-
-def contact(request):
-    return render(request, 'core/contact.html')
+    backgrounds=BackgroundImage.objects.all()
+    return render(request, 'core/home.html',{'backgrounds':backgrounds})

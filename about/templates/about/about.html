@@ -5,12 +5,18 @@
 {% block image-header %} about {% endblock %}
 
 {% block title-header %} 
-<div>
-    <h1 class="display-4 fw-bold">Manuel Alonso</h1>
-</div>
-<div>
-    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Desarrollador Web</h3>
-</div>
+
+{% for background in backgrounds %}
+    {% if background.name == "about" %}
+        <div>          
+            <h1 class="display-4 fw-bold">{{background.title}}</h1>
+        </div>
+        <div>
+            <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">{{background.subtitle}}</h3>
+        </div>
+    {% endif %}
+{% endfor %}
+
 {% endblock %}
 
 {% block content %} 
@@ -22,9 +28,15 @@
         <!-- <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.jpg' %} alt=""> -->
         <img class="img-fluid img-thumbnail img-circle img-perfil" src={{BASE_DIR}}"/media/backgrounds/foto-perfil.jpg" alt="Foto de perfil">
     </div>
-    <div class="col-7">
-        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
-    </div>
+    
+    {% for background in backgrounds %}
+        {% if background.name == "about" %}
+        <div class="col-7">
+            <h4>{{background.sentence}}</h4>
+        </div>
+        {% endif %}
+    {% endfor %}
+
 </div> 
 
 <div class="row d-flex pt-5">

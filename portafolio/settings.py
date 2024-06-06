@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%%uh$tn1=^pn8-@s$+*9s*@$n8l3@9#lv=-!rw!=na6d9i+(%c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mvalonsom.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'backgrounds',
     'redsocial.apps.RedsocialConfig',
     'ckeditor',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

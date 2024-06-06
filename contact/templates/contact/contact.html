@@ -7,12 +7,16 @@
 {% block image-header %} contact {% endblock %}
 
 {% block title-header %} 
-<div>
-    <h1 class="display-4 fw-bold">Contacto</h1>
-</div>
-<div>
-    <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">Asesoría personal</h3>
-</div>
+{% for background in backgrounds %}
+    {% if background.name == "contact" %}
+        <div>          
+            <h1 class="display-4 fw-bold">{{background.title}}</h1>
+        </div>
+        <div>
+            <h3 class="fs-2 bg-primary d-inline-block px-2 pb-1">{{background.subtitle}}</h3>
+        </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}
 
 {% block content %}
