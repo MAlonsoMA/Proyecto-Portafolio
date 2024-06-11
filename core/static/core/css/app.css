@@ -28,7 +28,7 @@ y estaban en static/core/img */
 }
 
 .img-perfil {
-    width: 60%;
+    width: 60%; 
     border-radius: 50%;
 }
 
@@ -82,6 +82,18 @@ y estaban en static/core/img */
     transition: all 0.5s ease-out;
 }
 
+@media screen and (max-width: 1400px) {
+    .img-perfil {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 972px) {
+    .img-perfil {
+        width: 75%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .footer__texto {
         font-size: 14px;
@@ -89,7 +101,11 @@ y estaban en static/core/img */
         font-weight: normal;
         text-align: center;
     }
+    .img-perfil {
+        width: 85%;
+    }
 }
+
 
 /* CONOCIMIENTOS - MANEJO DE LOS ICONOS */
 
@@ -105,8 +121,8 @@ y estaban en static/core/img */
 }
 
 .card__skills {
-    margin: 20px 15px;
-    padding: 20px 20px;
+    margin: 20px 10px;
+    padding: 20px 10px;
     max-height: 200px;
     border-radius: 5px;
     text-align: center;

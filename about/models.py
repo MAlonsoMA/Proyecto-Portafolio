@@ -14,7 +14,7 @@ class Course(models.Model):
     class Meta:
         verbose_name = 'formación'
         verbose_name_plural = 'formaciones'
-        ordering = ['-created']
+        ordering = ['created']
 
     # Con esta función logro mostrar en la lista de proyectos del admin, todos los proyectos con su titulo
     def __str__(self):
